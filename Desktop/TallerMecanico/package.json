@@ -1,0 +1,24 @@
+
+{
+  "name": "tallermecanico",
+  "version": "1.0.0",
+  "description": "Sistema de gestion de taller mecanico desarrollado con Node.js y Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "taller",
+    "mecanico",
+    "crud"
+  ],
+  "author": "Helen Elizabeth Martinez Soloj",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
+
