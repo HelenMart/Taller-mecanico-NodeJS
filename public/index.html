@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TALLER PRO</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+<div class="contenedor-principal">
+
+  <aside class="sidebar">
+    <div class="marca">
+      <h1>TALLER PRO</h1>
+      <p>Sistema de Gestión de Taller Mecánico</p>
+    </div>
+
+    <div class="perfil">
+      <p class="etiqueta">Desarrollado por</p>
+      <p class="nombre">Helen Elizabeth Martinez Soloj</p>
+    </div>
+
+    <div class="resumen">
+      <h3>Administración</h3>
+      <p>
+        Control de vehículos, servicios,
+        reparaciones y costos.
+      </p>
+    </div>
+  </aside>
+
+  <main class="contenido">
+
+    <section class="panel panel-destacado">
+      <h2>Panel principal</h2>
+
+      <div class="estadisticas">
+        <div class="card">
+          <span>Total de vehículos</span>
+          <strong id="total">0</strong>
+        </div>
+
+        <div class="card">
+          <span>Total de reparaciones</span>
+          <strong id="totalReparaciones">0</strong>
+        </div>
+
+        <div class="card">
+          <span>Ingresos estimados</span>
+          <strong>Q <span id="ingresos">0.00</span></strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid-dos">
+
+      <section class="panel">
+        <h2 id="tituloVehiculo">Registrar vehículo</h2>
+
+        <form id="formVehiculo">
+          <input id="placa" placeholder="Placa" required>
+          <input id="marca" placeholder="Marca" required>
+          <input id="modelo" placeholder="Modelo" required>
+          <input id="propietario" placeholder="Propietario" required>
+
+          <button id="btnVehiculo" type="submit">
+            Registrar vehículo
+          </button>
+
+          <button id="cancelarVehiculo"
+                  type="button"
+                  class="btn-cancelar oculto">
+            Cancelar edición
+          </button>
+        </form>
+      </section>
+
+      <section class="panel">
+        <h2 id="tituloReparacion">Registrar reparación</h2>
+
+        <form id="formReparacion">
+          <select id="vehiculoId" required>
+            <option value="">Seleccione vehículo</option>
+          </select>
+
+          <select id="servicio" required>
+            <option value="">Seleccione servicio</option>
+            <option>Cambio de aceite</option>
+            <option>Revisión de frenos</option>
+            <option>Reparación de motor</option>
+            <option>Cambio de llantas</option>
+            <option>Mantenimiento general</option>
+            <option>Diagnóstico electrónico</option>
+          </select>
+
+          <input
+            type="number"
+            id="precio"
+            placeholder="Precio en Q"
+            min="0"
+            step="0.01"
+            required
+          >
+
+          <button id="btnReparacion" type="submit">
+            Registrar reparación
+          </button>
+
+          <button id="cancelarReparacion"
+                  type="button"
+                  class="btn-cancelar oculto">
+            Cancelar edición
+          </button>
+        </form>
+      </section>
+
+    </section>
+
+    <section class="panel">
+      <h2>Vehículos registrados</h2>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Placa</th>
+              <th>Marca</th>
+              <th>Modelo</th>
+              <th>Propietario</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaVehiculos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Control de reparaciones</h2>
+
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Placa</th>
+              <th>Servicio</th>
+              <th>Precio</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tablaReparaciones"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p id="mensaje" role="status" aria-live="polite"></p>
+
+  </main>
+</div>
+
+</body>
+</html>
